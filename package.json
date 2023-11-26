@@ -35,5 +35,5 @@
   "devDependencies": {
     "electron": "^18.0.3"
   },
-  "repository": "https://github.com/AlshanRegmi/health-record-sharing-platform-blockchain.git"
+  "repository": "https://github.com/AlshanRegmi/HealthRecordManagingWebApp.git"
 }
