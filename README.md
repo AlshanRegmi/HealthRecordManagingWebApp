@@ -44,7 +44,6 @@ platform.
 ## How to Run Tests
 ```
 yarn test
-<<<<<<< HEAD
 ```
 
 ## How to build project
@@ -52,7 +51,6 @@ yarn test
 yarn build
 
 =======
->>>>>>> 17e2d52166af02ebb7fbe32822f9a0fa1fdbfece
 ```
 
 ## Whenever there is a change in Solidity code, use these commands
