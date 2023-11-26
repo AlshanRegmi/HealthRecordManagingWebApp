@@ -50,7 +50,6 @@ yarn test
 ```
 yarn build
 
-=======
 ```
 
 ## Whenever there is a change in Solidity code, use these commands
