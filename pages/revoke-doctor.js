@@ -98,11 +98,6 @@ class RevokeDoctor extends Component {
 
       return {
         header: showFullAddresses ? address : formattedAddress,
-        description: (
-          <Link route={`/record/${address}`}>
-            <a>View Record</a>
-          </Link>
-        ),
         fluid: true,
       };
     });
