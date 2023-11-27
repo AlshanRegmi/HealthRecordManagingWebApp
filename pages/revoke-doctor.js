@@ -98,6 +98,7 @@ class RevokeDoctor extends Component {
 
       return {
         header: showFullAddresses ? address : formattedAddress,
+        
         fluid: true,
       };
     });
@@ -106,7 +107,7 @@ class RevokeDoctor extends Component {
   }
 
   onRevoke = async () => {
-    this.setState({ loading: true, errorMessage: "" });
+    this.setState({ loadingRevoke: true, errorMessage: "" });
 
     try {
       const { doctorAddr } = this.state;
@@ -120,19 +121,19 @@ class RevokeDoctor extends Component {
 
       // Update the state with the new revoked doctor
       await record.methods
-        .givePermission(doctorAddr)
+        .RevokePermission(doctorAddr)
         .send({ from: accounts[0] });
 
       Swal.fire({
         icon: "success",
         title: "Success",
-        text: "Permission Granted",
+        text: "Permission Revoked Sucessfully",
       });
     } catch (err) {
       this.setState({ errorMessage: err.message });
     }
 
-    this.setState({ loading: false });
+    this.setState({ loadingRevoke: false });
   };
 
   render() {
@@ -152,7 +153,7 @@ class RevokeDoctor extends Component {
                 as="h2"
                 textAlign="center"
                 content="Revoke Access"
-                subheader="Give doctor or patient permission to view records"
+                subheader="Revoked the granted permission for address"
               />
               <Form error={!!this.state.errorMessage}>
                 <Form.Field>

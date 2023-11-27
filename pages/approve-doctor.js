@@ -95,6 +95,7 @@ renderRecords() {
 
       return {
         header: showFullAddresses ? address : formattedAddress,
+        
         fluid: true,
       };
     });
@@ -104,7 +105,7 @@ renderRecords() {
 
 
   onApprove = async () => {
-    this.setState({ loading: true, errorMessage: "" });
+    this.setState({ loadingApprove: true, errorMessage: "" });
 
     try {
       const { doctorAddr } = this.state;
@@ -130,7 +131,7 @@ renderRecords() {
       this.setState({ errorMessage: err.message });
     }
 
-    this.setState({ loading: false });
+    this.setState({ loadingApprove: false });
   };
 
   render() {
@@ -145,7 +146,7 @@ renderRecords() {
                   as="h2"
                   textAlign="center"
                   content="Allow Access"
-                  subheader="Give doctor or patient permission to view records"
+                  subheader="Give permission to view records to address"
                 />
                 <Form error={!!this.state.errorMessage}>
                   <Form.Field>
